@@ -1,0 +1,398 @@
+/* General Styles - Styling global untuk seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;  /* Latar belakang putih untuk halaman */
+    color: #333;  /* Warna teks utama */
+}
+
+/* Header - Desain untuk bagian header */
+@media (max-width: 768px) {
+    .header .container1 {
+        flex-direction: column; /* Tata letak menjadi kolom pada layar kecil */
+        align-items: flex-start; /* Menempatkan elemen ke sisi kiri */
+    }
+
+    .header nav ul {
+        flex-direction: column; /* Navigasi dalam bentuk kolom */
+        gap: 10px; /* Jarak antar item diatur untuk kolom */
+        width: 100%; /* Lebar penuh untuk navigasi */
+        margin-top: 10px; /* Jarak antara brand dan menu navigasi */
+    }
+
+    .header nav ul li {
+        text-align: left; /* Teks sejajar ke kiri */
+    }
+
+    .header nav ul li a {
+        padding: 10px 15px; /* Padding untuk area klik lebih besar */
+        display: block; /* Membuat link menjadi blok agar lebih mudah di-klik */
+        width: 100%; /* Lebar penuh untuk tombol */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 20px; /* Mengurangi padding header untuk perangkat kecil */
+    }
+
+    .header nav ul li a {
+        font-size: 14px; /* Ukuran font lebih kecil */
+    }
+}
+
+/* Main Container - Desain kontainer utama untuk konten */
+.container {
+    max-width: 1100px; /* Lebar maksimal untuk kontainer */
+    margin: 20px auto; /* Margin atas dan bawah */
+    padding: 20px; /* Padding untuk ruang dalam kontainer */
+    background: white; /* Latar belakang putih */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+}
+
+.container h2 {
+    text-align: center; /* Menyelaraskan judul di tengah */
+    color: #6F4E37; /* Warna judul */
+    margin-bottom: 20px; /* Margin bawah untuk memberi ruang */
+}
+
+/* Button Styles - Gaya untuk tombol */
+.btn1, .btn-edit, .btn-delete, .btn-submit, .btn-buy, .btn-back {
+    padding: 10px 20px; /* Padding untuk tombol */
+    border-radius: 5px; /* Sudut membulat untuk tombol */
+    text-align: center;
+    font-size: 16px; /* Ukuran font tombol */
+    margin: 5px; /* Margin antar tombol */
+}
+
+.btn1, .btn-edit, .btn-delete {
+    background-color: #6F4E37; /* Warna tombol utama */
+    color: white; /* Teks putih pada tombol */
+}
+
+.btn1:hover, .btn-edit:hover, .btn-delete:hover {
+    background-color: #8f674b; /* Warna saat tombol di-hover */
+}
+
+.btn-edit {
+    background: #4caf50; /* Warna tombol untuk edit */
+    text-decoration: none;
+}
+
+.btn-edit:hover {
+    background: #45a049; /* Warna tombol edit saat di-hover */
+}
+
+.btn-delete {
+    background: #f44336; /* Warna tombol untuk hapus */
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    background: #d32f2f; /* Warna tombol hapus saat di-hover */
+}
+
+.btn-submit {
+    background: #28a745; /* Warna tombol submit */
+    color: white;
+    transition: background 0.3s ease; /* Transisi perubahan warna */
+}
+
+.btn-submit:hover {
+    background: #218838; /* Warna tombol submit saat di-hover */
+}
+
+.btn-buy {
+    background: #ffc107; /* Warna tombol beli */
+    color: white;
+}
+
+.btn-buy:hover {
+    background: #ffca28; /* Warna tombol beli saat di-hover */
+}
+
+.btn-back {
+    background: #4CAF50; /* Warna tombol kembali */
+    color: white;
+}
+
+.btn-back:hover {
+    background: #45a049; /* Warna tombol kembali saat di-hover */
+}
+
+/* Table Styles - Gaya untuk tabel yang digunakan untuk menampilkan daftar */
+table {
+    width: 100%; /* Menggunakan lebar penuh */
+    border-collapse: collapse; /* Menggabungkan border tabel */
+    margin-top: 20px; /* Margin atas untuk jarak dari elemen lain */
+}
+
+table th, table td {
+    padding: 20px; /* Padding dalam sel tabel */
+    text-align: left; /* Teks rata kiri */
+    border-bottom: 1px solid #ddd; /* Border bawah untuk setiap sel */
+}
+
+table th {
+    background-color: #6F4E37; /* Latar belakang header tabel */
+    color: white; /* Teks putih pada header tabel */
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Latar belakang baris genap */
+}
+
+/* Footer - Desain untuk bagian footer */
+footer {
+    text-align: center;
+    background: #fff;
+    color: #666; /* Warna teks footer */
+    padding: 10px 0;
+    font-size: 0.9rem; /* Ukuran font footer */
+    margin-top: 20px; /* Margin atas untuk memberi jarak */
+}
+
+/* Form Styles - Gaya untuk form yang ada di halaman */
+.form-container {
+    max-width: 500px; /* Lebar maksimal untuk form */
+    margin: 50px auto; /* Margin untuk memberi ruang */
+    padding: 20px 30px; /* Padding dalam form */
+    background: white;
+    border-radius: 8px; /* Sudut membulat pada form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan pada form */
+}
+
+.form-container h1 {
+    text-align: center; /* Judul form di tengah */
+    font-size: 24px; /* Ukuran font judul */
+    color: #333; /* Warna teks judul */
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar elemen form */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #555; /* Warna label form */
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px; /* Padding dalam input dan textarea */
+    border: 1px solid #ddd; /* Border abu-abu muda */
+    border-radius: 4px;
+    font-size: 14px; /* Ukuran font input */
+    color: #333;
+    outline: none; /* Menghilangkan outline default */
+    transition: border 0.3s ease; /* Transisi perubahan border */
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border: 1px solid #66afe9; /* Border biru saat input difokuskan */
+    box-shadow: 0 0 4px rgba(102, 175, 233, 0.6); /* Efek bayangan */
+}
+
+/* Messages - Gaya untuk pesan error dan success */
+.error-msg {
+    color: red; /* Warna untuk pesan error */
+    text-align: center;
+    margin-bottom: 10px; /* Margin bawah */
+    font-size: 14px; /* Ukuran font untuk pesan error */
+}
+
+.success-msg, .info-msg {
+    padding: 20px; /* Padding untuk pesan sukses dan info */
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.success-msg {
+    background-color: #28a745; /* Warna latar belakang sukses */
+    color: white;
+}
+
+.info-msg {
+    background-color: #ffc107; /* Warna latar belakang info */
+    color: black;
+}
+
+/* Responsive Design - Gaya responsif untuk perangkat dengan layar kecil */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Padding lebih kecil di layar kecil */
+    }
+
+    .form-container {
+        margin: 20px; /* Margin lebih kecil */
+        padding: 15px; /* Padding lebih kecil */
+    }
+
+    .btn-submit {
+        font-size: 14px; /* Ukuran font lebih kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px; /* Ukuran font judul lebih kecil */
+    }
+
+    .container {
+        padding: 10px; /* Padding lebih kecil */
+    }
+
+    button {
+        font-size: 14px; /* Ukuran font tombol lebih kecil */
+        padding: 10px; /* Padding tombol lebih kecil */
+    }
+}
+
+/* Adjustments for Form - Penyesuaian tambahan untuk form */
+.form-container h1 {
+    font-size: 22px; /* Ukuran font judul form */
+}
+
+.form-group input {
+    width: 100%; /* Lebar input form 100% */
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-group input:focus {
+    border-color: #333; /* Border lebih gelap saat input difokuskan */
+}
+
+/* Header & Navbar Styles */
+.header {
+    background-color: #423434; /* Warna latar belakang header */
+    color: white; /* Teks putih untuk header */
+    padding: 20px 25px; /* Padding untuk header */
+}
+
+.header .container1 {
+    display: flex;
+    justify-content: space-between; /* Spasi antara elemen di dalam container */
+    align-items: center; /* Menjaga elemen tetap sejajar secara vertikal */
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Jarak antar item navigasi */
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: white; /* Teks putih untuk navigasi */
+    font-weight: 400;
+}
+
+.header nav ul li a:hover {
+    text-decoration: underline; /* Efek hover untuk item navigasi */
+}
+
+/* Checkout Form Styles */
+.checkout-container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #34495e;
+}
+
+.checkout-form .form-group {
+    margin-bottom: 25px;
+}
+
+.checkout-form .form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.checkout-form .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.checkout-form .form-group input:disabled {
+    background-color: #f9f9f9;
+}
+
+.checkout-form .form-group input[type="number"] {
+    width: 40%;
+}
+
+.checkout-form .btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-form .btn-submit:hover {
+    background-color: #2ecc71;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checkout-container {
+        width: 75%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header nav ul li a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .checkout-container {
+        width: 90%;
+    }
+}
