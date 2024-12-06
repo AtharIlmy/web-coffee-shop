@@ -288,7 +288,7 @@ $coffees = $pdo->query("SELECT * FROM coffees")->fetchAll();
                 <label for="image">Gambar Kopi</label>
                 <input type="file" name="image" id="image" accept="image/*">
             </div>
-            <button type="submit" name="add_coffee" class="btn-submit">Tambah</button>
+            <button type="submit" name="add_coffee" class="btn-submit">Tambah Product</button>
         </form>
     </div>
 
