@@ -196,7 +196,6 @@ $coffees = $pdo->query("SELECT * FROM coffees")->fetchAll();
         </div>
     </section>
 </div>
-
 <footer>
     <div class="container">
         <p>&copy; 2024 Coffee Shop. All Rights Reserved.</p>

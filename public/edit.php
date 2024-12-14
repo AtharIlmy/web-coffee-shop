@@ -36,20 +36,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($image) {
         $targetDir = "../uploads/";
         $targetFile = $targetDir . basename($image);
-        move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
 
+        // Periksa apakah file berhasil diunggah
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $targetFile)) {
+            $stmt = $pdo->prepare("UPDATE coffees SET name = ?, description = ?, price = ?, image = ? WHERE id = ?");
+            $success = $stmt->execute([$name, $description, $price, $image, $id]);
+        } else {
+            $error = "Gagal mengunggah gambar!";
+        }
+    } else {
         $stmt = $pdo->prepare("UPDATE coffees SET name = ?, description = ?, price = ?, image = ? WHERE id = ?");
         $success = $stmt->execute([$name, $description, $price, $image, $id]);
-    } else {
-        $stmt = $pdo->prepare("UPDATE coffees SET name = ?, description = ?, price = ? WHERE id = ?");
-        $success = $stmt->execute([$name, $description, $price, $id]);
     }
 
     if ($success) {
         header("Location: index.php");
         exit();
     } else {
-        $error = "Gagal mengedit kopi!";
+        $error = $error ?? "Gagal mengedit kopi!";
     }
 }
 ?>
@@ -85,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="file" name="image" id="image">
                 <?php if (!empty($coffee['image'])): ?>
                     <p>Gambar saat ini:</p>
-                    <img src="../uploads/<?= htmlspecialchars($coffee['image']) ?>" alt="Gambar Kopi" width="150">
+                    <img src="../uploads/<?= htmlspecialchars($coffee['image']) ?>?v=<?= time() ?>" alt="Gambar Kopi" width="150">
                 <?php endif; ?>
             </div>
 

@@ -3,16 +3,24 @@ session_start();
 include('../includes/db.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $username = trim($_POST['username']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    // Tambahkan pengguna baru dengan role default 'user'
-    $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, 'user')");
-    if ($stmt->execute([$username, $password])) {
-        header("Location: login.php");
-        exit();
+    // Periksa apakah username sudah digunakan
+    $checkQuery = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $checkQuery->execute([$username]);
+
+    if ($checkQuery->rowCount() > 0) {
+        $error = "Username sudah digunakan. Silakan pilih username lain.";
     } else {
-        $error = "Pendaftaran gagal, coba lagi.";
+        // Tambahkan pengguna baru dengan role default 'user'
+        $stmt = $pdo->prepare("INSERT INTO users (username, password, role) VALUES (?, ?, 'user')");
+        if ($stmt->execute([$username, $password])) {
+            header("Location: login.php");
+            exit();
+        } else {
+            $error = "Pendaftaran gagal, coba lagi.";
+        }
     }
 }
 ?>
@@ -41,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <button type="submit" class="btn-submit">Daftar</button>
+            <p>Udah punya akun? <a href="login.php">Login</a></p>
         </form>
     </div>
 </body>
